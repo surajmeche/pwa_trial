@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#16a34a">
+  <title>About Suraj Meche</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Comic Sans MS', 'Arial Black', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background: white;
+      color: #764ba2;
+      border: 3px solid #764ba2;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: 'Comic Sans MS', sans-serif;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      border: 5px solid #16a34a;
+      margin-bottom: 30px;
+      transform: rotate(1deg);
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .profile-name {
+      font-size: 3em;
+      color: #764ba2;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      animation: wiggle 0.5s infinite;
+    }
+
+    .profile-title {
+      font-size: 1.5em;
+      color: #16a34a;
+      margin-bottom: 5px;
+    }
+
+    .funny-tagline {
+      font-size: 1.2em;
+      color: #f97316;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.8em;
+      color: #764ba2;
+      border-bottom: 3px dashed #16a34a;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .skill-box {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      transform: skewX(-10deg);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-box:hover {
+      transform: skewX(-10deg) scale(1.05);
+    }
+
+    .skill-text {
+      transform: skewX(10deg);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      padding: 10px 0;
+      font-size: 1.1em;
+      color: #333;
+      border-bottom: 2px dotted #16a34a;
+    }
+
+    ul li:before {
+      content: "🎯 ";
+      margin-right: 10px;
+    }
+
+    .fun-fact {
+      background: #fff3cd;
+      border-left: 5px solid #f97316;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 5px;
+      font-size: 1.1em;
+      transform: rotate(-1deg);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .social-btn {
+      padding: 12px 25px;
+      border: 3px solid white;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: 'Comic Sans MS', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+
+    .social-btn:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: skewX(-5deg); }
+      50% { transform: skewX(5deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="./index.html" class="back-btn">← Back Home</a>
+
+    <div class="profile-card">
+      <div class="profile-header">
+        <h1 class="profile-name">Suraj Meche</h1>
+        <p class="profile-title">💻 Web Developer | 🎨 Designer | 😂 Meme Master</p>
+        <p class="funny-tagline">"Code by day, Memes by night"</p>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">🎯 About</h2>
+        <p style="font-size: 1.1em; color: #333; line-height: 1.8;">
+          Welcome to my funny portfolio! I'm a passionate web developer who believes that code should be as clean as my sense of humor is questionable. I build Progressive Web Apps, make websites go brrr, and occasionally create memes that should never see the light of day. (But here we are!)
+        </p>
+        <div class="fun-fact">
+          <strong>🎉 Fun Fact:</strong> I once debugged code for 8 hours only to realize I forgot a semicolon. Classic!
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">💪 Skills</h2>
+        <div class="skill-box"><span class="skill-text">⚡ JavaScript (The language of chaos)</span></div>
+        <div class="skill-box"><span class="skill-text">🎨 React & Web Design</span></div>
+        <div class="skill-box"><span class="skill-text">📱 PWA Development</span></div>
+        <div class="skill-box"><span class="skill-text">🗂️ Git & Version Control</span></div>
+        <div class="skill-box"><span class="skill-text">😂 Professional Meme Creation</span></div>
+        <div class="skill-box"><span class="skill-text">🚀 Making Things Go Brrr</span></div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">📚 Experience</h2>
+        <ul>
+          <li>Built awesome PWAs that work offline (even better than my social skills)</li>
+          <li>Debugged mysterious bugs that only appear on Fridays at 4:59 PM</li>
+          <li>Created responsive designs that look good on potato quality monitors</li>
+          <li>Wrote comments in code that are funnier than the code itself</li>
+          <li>Learned that "It works on my machine" is not a valid deployment strategy</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">🏆 Achievements</h2>
+        <ul>
+          <li>Successfully deployed code without breaking production (sometimes)</li>
+          <li>Created a PWA that actually installs (on Chrome, at least)</li>
+          <li>Fixed a bug by turning it off and on again 🔄</li>
+          <li>Survived more console errors than a support hotline 🎮</li>
+        </ul>
+      </div>
+
+      <div class="fun-fact">
+        <strong>💡 Dev Philosophy:</strong> Write code like it's the last thing you'll ever write. Because tomorrow, you might forget what it does anyway!
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/surajmeche" target="_blank" class="social-btn">🐙 GitHub</a>
+        <a href="mailto:suraj@example.com" class="social-btn">📧 Email</a>
+        <a href="index.html" class="social-btn">🏠 Home</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

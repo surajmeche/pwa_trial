@@ -57,6 +57,7 @@
       border: 5px dashed #16a34a;
       transform: rotate(-2deg);
       animation: bounce 3s infinite;
+      margin-bottom: 30px;
     }
 
     .funny-card img {
@@ -74,6 +75,69 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       animation: wiggle 0.5s infinite;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .fun-btn {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: 3px solid #16a34a;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      font-family: 'Comic Sans MS', sans-serif;
+    }
+
+    .fun-btn:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, #15803d, #16a34a);
+    }
+
+    .fun-btn:active {
+      transform: scale(0.95);
+    }
+
+    .fun-btn.about {
+      background: linear-gradient(135deg, #764ba2, #667eea);
+      border-color: #764ba2;
+    }
+
+    .fun-btn.about:hover {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .fun-btn.contact {
+      background: linear-gradient(135deg, #f97316, #f87171);
+      border-color: #f97316;
+    }
+
+    .fun-btn.contact:hover {
+      background: linear-gradient(135deg, #f87171, #f97316);
+    }
+
+    .fun-btn.social {
+      background: linear-gradient(135deg, #ec4899, #f43f5e);
+      border-color: #ec4899;
+    }
+
+    .fun-btn.social:hover {
+      background: linear-gradient(135deg, #f43f5e, #ec4899);
     }
 
     @keyframes bounce {
@@ -94,6 +158,12 @@
   <div class="funny-card">
     <img src="./image/san.jpeg" alt="Funny Meme">
     <h1>Sandesh Mai Key chodey</h1>
+  </div>
+
+  <div class="button-group">
+    <button class="fun-btn about" onclick="location.href='about.html'">👨‍💻 About Me</button>
+    <button class="fun-btn social" onclick="location.href='https://github.com/surajmeche'">🐙 GitHub</button>
+    <button class="fun-btn contact" onclick="location.href='mailto:contact@example.com'">📧 Email</button>
   </div>
 
   <script src="script.js"></script>
