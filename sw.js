@@ -1,4 +1,5 @@
 const CACHE_NAME = "pwa-cache-v1";
+
 const ASSETS = [
   "./",
   "./index.html",
@@ -8,34 +9,37 @@ const ASSETS = [
   "./image/512.png"
 ];
 
-self.addEventListener("install", e => {
+// Install
+self.addEventListener("install", (e) => {
   e.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(ASSETS);
     })
   );
-  self.skipWaiting(); // Activate immediately
+  self.skipWaiting();
 });
 
-self.addEventListener("activate", e => {
+// Activate
+self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches.keys().then(cacheNames => {
+    caches.keys().then(names => {
       return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME) {
-            return caches.delete(cacheName);
+        names.map(name => {
+          if (name !== CACHE_NAME) {
+            return caches.delete(name);
           }
         })
       );
     })
   );
-  self.clients.claim(); // Claim all pages immediately
+  self.clients.claim();
 });
 
-self.addEventListener("fetch", e => {
+// Fetch (offline support)
+self.addEventListener("fetch", (e) => {
   e.respondWith(
-    caches.match(e.request).then(response =>{
-      return response || fetch(e.request);
+    caches.match(e.request).then(res => {
+      return res || fetch(e.request);
     })
   );
 });
