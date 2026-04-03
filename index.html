@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f0fdf4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="pwa trial">
     <title>pwa</title>
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="image/192.png">
+    <style>
+        * { margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #installBtn { 
+            display: none; 
+            padding: 10px 20px; 
+            background: #16a34a; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #installBtn:hover { background: #15803d; }
+    </style>
 </head>
 <body>
+    <button id="installBtn">📲 Install App</button>
     <h1>my name is suraj meche</h1>
     <script src="script.js"></script>
-    
 </body>
 </html>

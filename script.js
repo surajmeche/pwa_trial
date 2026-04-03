@@ -1,35 +1,72 @@
 let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+const isAndroid = /Android/.test(navigator.userAgent);
+const isChromium = window.chrome !== null && typeof window.chrome !== 'undefined';
 
-// Capture the beforeinstallprompt event early
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault(); // Prevent default install popup
-  deferredPrompt = e; // Store for later use
-  console.log('Install prompt ready');
-});
+// Detect if app is already installed
+const isInstalled = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+
+if (isInstalled) {
+  installBtn.style.display = 'none';
+}
+
+// Chrome, Edge, and other Chromium browsers
+if (isChromium || isAndroid) {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'block';
+  });
+}
+
+// Safari/iOS instructions
+if (isIOS) {
+  installBtn.textContent = '📲 Add to Home Screen (Share → Add to Home Screen)';
+  installBtn.style.display = 'block';
+  installBtn.disabled = true;
+  installBtn.style.opacity = '0.7';
+}
+
+// Firefox - show custom button
+if (navigator.userAgent.includes('Firefox') && !isIOS && !isAndroid) {
+  installBtn.style.display = 'block';
+}
+
+// Install button click handler
+if (installBtn) {
+  installBtn.addEventListener('click', async (e) => {
+    if (deferredPrompt) {
+      // Chrome/Edge/Chromium
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`User response: ${outcome}`);
+      deferredPrompt = null;
+    } else if (isIOS) {
+      console.log('iOS: Please use Share → Add to Home Screen');
+    } else {
+      console.log('Please use your browser menu to install this app');
+    }
+  });
+}
 
 window.addEventListener('appinstalled', () => {
   console.log('PWA installed successfully');
+  installBtn.style.display = 'none';
   deferredPrompt = null;
 });
 
-if("serviceWorker" in navigator){
-  navigator.serviceWorker.register("sw.js").then(registration =>{
-    console.log("SW Registered !");
-  }).catch(error =>{
-    console.log("SW Registration Failed");
-    console.log(error);
-  })
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").then(registration => {
+    console.log("Service Worker Registered!");
+  }).catch(error => {
+    console.log("Service Worker Registration Failed:", error);
+  });
 }
 
-// Function to show install prompt manually if needed
+// Show install prompt if app is not installed and browser supports it
 function showInstallPrompt() {
-  if (deferredPrompt) {
+  if (deferredPrompt && !isInstalled) {
     deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(choiceResult => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted install');
-      }
-      deferredPrompt = null;
-    });
   }
 }
