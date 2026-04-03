@@ -1,19 +1,33 @@
 {
-    "name" : "pwa trial",
-    "short_name" : "pwa trial",
-    "description" : "A progressive web app",
-    "start_url" : "./",
-    "background_color" : "#ffffff",
-    "theme_color" : "#f0fdf4",
-    "display" : "standalone",
-    "icons" : [{
-        "src": "./image/192.png",
-        "sizes" : "192x192",
-        "type" : "image/png"
-    },
-    {
-        "src": "./image/512.png",
-        "sizes" : "512x512",
-        "type" : "image/png"
-    }]
+    "name": "PWA Trial",
+    "short_name": "PWA",
+    "description": "A hilarious Progressive Web App portfolio featuring Sandesh Karki",
+    "start_url": "./index.html",
+    "scope": "./",
+    "background_color": "#ffffff",
+    "theme_color": "#16a34a",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "./image/192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "./image/512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "./image/192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
 }
